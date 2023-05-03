@@ -10,6 +10,9 @@ EXPOSE 8080
 #CORREMOS EL JAR COMPILADO
 CMD ["catalina.sh", "run"]
 
+#CONSTRUIR IMAGEN
+#docker build -t tiendaweb .
+
 #PARA CORRERLO HAY QUE PUBLICAR HACIA AFUERA N INSTANCIAS
 #docker run -it --publish 8081:8080 tiendaweb
 #docker run -it --publish 8082:8080 tiendaweb
