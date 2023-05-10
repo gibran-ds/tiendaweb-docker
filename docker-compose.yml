@@ -1,0 +1,24 @@
+version: '3'
+services:
+    app-web:
+        image: tiendaweb:latest
+        container_name: tiendaweb
+        depends_on:
+        - mysql-server
+        ports:
+            - 8081:8080
+        networks:
+            - tiendaweb-network
+    mysql-server:
+        image: mysql:8.0.17
+        container_name: tiendaweb-mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_DATABASE: ventas_web
+        ports:
+            - 3308:3306
+        networks:
+            - tiendaweb-network
+networks:
+    tiendaweb-network:
+        driver: bridge
